@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>個人商店</title>
+    <script src="./_js/bootstrap.bundle.js"></script>
+    <link rel="stylesheet" href="./_css/bootstrap.css">
+    <link rel="stylesheet" href="./styles.css">
+</head>
+
+<body>
+    <header>
+        <nav class="navbar navbar-expand-lg nav-light myNav">
+            <div class="container-fluid">
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#myMenu"
+                    aria-controls="myMenu" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="myMenu">
+                    <ul class="navbar-nav me-auto mb-2 mb-lg-0 " id="nav-menu">
+                        <li class="nav-item"><a class="nav-link" href="./index.html">首頁</a></li>
+                        <li class="nav-item"><a class="nav-link" href="./product.html">商品</a></li>
+                        <li class="nav-item"><a class="nav-link" href="./favorite.html">我的最愛</a></li>
+                        <li class="nav-item"><a class="nav-link" href="./cart.html">購物車</a></li>
+                        <li class="nav-item"><a class="nav-link" aria-current="page" href="#F">FAQ</a></li>
+                    </ul>
+                </div>
+
+
+                <div class="loginbtn">
+                    <button class="myBtn" onclick="document.getElementById('id01').style.display='block'"
+                        style="width: auto;">登入</button>
+                    <button class="myBtn" onclick="document.getElementById('id02').style.display='block'"
+                        style="width: auto;">註冊</button>
+
+                    <div id="id01" class="modal">
+                        <form class="modal-content animate" method="post">
+                            <div class="imgcontainer">
+                                <span onclick="document.getElementById('id01').style.display='none'" class="close"
+                                    title="Close Modal">&times;</span>
+                                <img src="./image/openfid.jpg" alt="personimg">
+                            </div>
+                            <div class="container">
+                                <label for="uname"><b>帳號</b></label>
+                                <input type="text" name="uname" placeholder="Enter Username" required>
+
+                                <label for="psw"><b>密碼</b></label>
+                                <input type="text" name="psw" placeholder="Enter Password" required>
+
+                                <button class="myBtn" type="submit">登入</button>
+                                <label>
+                                    <input type="checkbox" name="remember" checked>記住我
+                                </label>
+                            </div>
+
+                            <div class="container" id="cancelpsw">
+                                <button type="button" onclick="document.getElementById('id01').style.display='none'"
+                                    class="cancelbtn">取消</button>
+                                <span class="psw">Forgot <a href="#">password?</a></span>
+                            </div>
+                        </form>
+                    </div>
+                    <div id="id02" class="modal">
+                        <form class="modal-content animate" method="post">
+                            <div class="imgcontainer">
+                                <span onclick="document.getElementById('id02').style.display='none'" class="close"
+                                    title="Close Modal">&times;</span>
+                                <img src="./image/openfid.jpg" alt="personimg">
+                            </div>
+                            <div class="container">
+                                <label for="Name"><b>姓名</b></label>
+                                <input type="text" name="Name" placeholder="輸入真實姓名" required>
+
+                                <label for="Email"><b>信箱</b></label>
+                                <input type="email" name="Email" placeholder="XXX@gmail.com" required>
+
+                                <label for="Phone"><b>電話</b></label>
+                                <input type="tel" name="Phone" pattern="[0-9]{10}" placeholder="0912345678" required>
+
+                                <label for="uname"><b>帳號</b></label>
+                                <input type="text" name="uname" placeholder="輸入帳號" required>
+
+                                <label for="psw"><b>密碼</b></label>
+                                <input type="text" name="psw" placeholder="輸入密碼" required>
+
+                                <button class="myBtn" type="submit">註冊</button>
+
+                            </div>
+
+                            <div class="container" id="cancelpsw">
+                                <button type="button" onclick="document.getElementById('id02').style.display='none'"
+                                    class="cancelbtn">取消</button>
+                                <span class="psw">Forgot <a href="#">password?</a></span>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <div class="container">
+        <ul class="nav nav-fill nav-pills flex-column flex-md-row mt-4">
+            <li class="nav-item"><a href="#F1" data-bs-toggle="pill" class="nav-link">商品相關</a></li>
+            <li class="nav-item"><a href="#F2" data-bs-toggle="pill" class="nav-link">購買與付款</a></li>
+            <li class="nav-item"><a href="#F3" data-bs-toggle="pill" class="nav-link">優惠與活動</a></li>
+            <li class="nav-item"><a href="#F4" data-bs-toggle="pill" class="nav-link">售後服務</a></li>
+        </ul>
+
+        <div class="tab-content">
+            <div class="tab-pane" id="F1">
+                <div class="container mt-4">
+                    <ul>
+                        <li>
+                            <p><b>Q: 扭蛋是否有保證能抽到特定商品？</b></p>
+                            <p>A: 扭蛋是隨機機制，無法保證抽到特定商品，但您可以透過交換或購買來獲得心儀商品。</p>
+                        </li>
+                        <li>
+                            <p><b>Q: 扭蛋有沒有可能抽到重複的？</b></p>
+                            <p>A: 有可能抽到重複的商品，這是扭蛋遊戲的一部分樂趣。</p>
+                        </li>
+                        <li>
+                            <p><b>Q: 如果扭蛋裡的商品損壞了，可以更換嗎？</b></p>
+                            <p>A: 如果商品有明顯製造缺陷，請於購買後 X 日內聯絡我們，我們將視情況處理。</p>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="tab-pane" id="F2">
+                <div class="container mt-4">
+                    <ul>
+                        <li>
+                            <p><b>Q: 支援哪些付款方式？</b></p>
+                            <p>A: 我們接受現金、信用卡、行動支付（如 Apple Pay、Google Pay）及其他指定付款方式。</p>
+                        </li>
+                        <li>
+                            <p><b>Q: 是否可以一次購買多個扭蛋？</b></p>
+                            <p>A: 可以，您可以一次購買多個扭蛋，享受多重驚喜！</p>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="tab-pane" id="F3">
+                <div class="container mt-4">
+                    <ul>
+                        <li>
+                            <p><b>Q: 是否有會員制度或優惠？</b></p>
+                            <p>A: 是的，加入會員可享首抽折扣與生日優惠，還有累積點數兌換活動。</p>
+                        </li>
+                        <li>
+                            <p><b>Q: 店內是否定期舉辦活動？</b></p>
+                            <p>A: 我們每月舉辦特別扭蛋活動，詳情請關注店內公告或官方社群。</p>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="tab-pane" id="F4">
+                <div class="container mt-4">
+                    <ul>
+                        <li>
+                            <p><b>Q: 是否需要展示盒？</b></p>
+                            <p>A: 我們可以幫您將商品裝入展示盒，並擺放整齊，回家後可再依自己的喜好調整位置。</p>
+                        </li>
+                        <li>
+                            <p><b>Q: 可以退貨或退款嗎？</b></p>
+                            <p>A: 由於扭蛋屬於隨機抽取商品，正常情況下無法退貨或退款。若商品有重大瑕疵，請於購買後 7 天內 聯絡我們進行處理。</p>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+    </main>
+    <script src="./_js/javascript.js"></script>
+</body>
+
+</html>

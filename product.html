@@ -1,0 +1,430 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>個人商店</title>
+    <script src="./_js/bootstrap.bundle.js"></script>
+    <script src="./_js/javascript.js"></script>
+    <link rel="stylesheet" href="./_css/bootstrap.css">
+    <link rel="stylesheet" href="./styles.css">
+</head>
+
+<body>
+    <header>
+        <nav class="navbar navbar-expand-lg nav-light myNav">
+            <div class="container-fluid">
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#myMenu"
+                    aria-controls="myMenu" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="myMenu">
+                    <ul class="navbar-nav me-auto mb-2 mb-lg-0 " id="nav-menu">
+                        <li class="nav-item"><a class="nav-link" href="./index.html">首頁</a></li>
+                        <li class="nav-item"><a class="nav-link" aria-current="page" href="#">商品</a></li>
+                        <li class="nav-item"><a class="nav-link" href="./favorite.html">我的最愛</a></li>
+                        <li class="nav-item"><a class="nav-link" href="./cart.html">購物車</a></li>
+                        <li class="nav-item"><a class="nav-link" href="./FAQ.html">FAQ</a></li>
+                    </ul>
+                </div>
+
+
+                <div class="loginbtn">
+                    <button class="myBtn" onclick="document.getElementById('id01').style.display='block'"
+                        style="width: auto;">登入</button>
+                    <button class="myBtn" onclick="document.getElementById('id02').style.display='block'"
+                        style="width: auto;">註冊</button>
+
+                    <div id="id01" class="modal">
+                        <form class="modal-content animate" method="post">
+                            <div class="imgcontainer">
+                                <span onclick="document.getElementById('id01').style.display='none'" class="close"
+                                    title="Close Modal">&times;</span>
+                                <img src="./image/openfid.jpg" alt="personimg">
+                            </div>
+                            <div class="container">
+                                <label for="uname"><b>帳號</b></label>
+                                <input type="text" name="uname" placeholder="Enter Username" required>
+
+                                <label for="psw"><b>密碼</b></label>
+                                <input type="text" name="psw" placeholder="Enter Password" required>
+
+                                <button class="myBtn" type="submit">登入</button>
+                                <label>
+                                    <input type="checkbox" name="remember" checked>記住我
+                                </label>
+                            </div>
+
+                            <div class="container" id="cancelpsw">
+                                <button type="button" onclick="document.getElementById('id01').style.display='none'"
+                                    class="cancelbtn">取消</button>
+                                <span class="psw">Forgot <a href="#">password?</a></span>
+                            </div>
+                        </form>
+                    </div>
+                    <div id="id02" class="modal">
+                        <form class="modal-content animate" method="post">
+                            <div class="imgcontainer">
+                                <span onclick="document.getElementById('id02').style.display='none'" class="close"
+                                    title="Close Modal">&times;</span>
+                                <img src="./image/openfid.jpg" alt="personimg">
+                            </div>
+                            <div class="container">
+                                <label for="Name"><b>姓名</b></label>
+                                <input type="text" name="Name" placeholder="輸入真實姓名" required>
+
+                                <label for="Email"><b>信箱</b></label>
+                                <input type="email" name="Email" placeholder="XXX@gmail.com" required>
+
+                                <label for="Phone"><b>電話</b></label>
+                                <input type="tel" name="Phone" pattern="[0-9]{10}" placeholder="0912345678" required>
+
+                                <label for="uname"><b>帳號</b></label>
+                                <input type="text" name="uname" placeholder="輸入帳號" required>
+
+                                <label for="psw"><b>密碼</b></label>
+                                <input type="text" name="psw" placeholder="輸入密碼" required>
+
+                                <button class="myBtn" type="submit">註冊</button>
+
+                            </div>
+
+                            <div class="container" id="cancelpsw">
+                                <button type="button" onclick="document.getElementById('id02').style.display='none'"
+                                    class="cancelbtn">取消</button>
+                                <span class="psw">Forgot <a href="#">password?</a></span>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <div class="container">
+            <h1><b>轉生史萊姆 | 變裝扭蛋</b></h1>
+            <hr>
+            <div class="container">
+                <h3><b>第一彈</b></h3>
+                <img src="./image/SlimePE1w-0.jpg" class="proimg" id="myimage">
+                <div class="row row-cols-2 row-cols-md-3 row-cols-xl-5 g-4">
+
+                    <div class="col">
+                        <div class="card h-100 proImg" data-id="1" data-name="經典-利姆路" data-price="150"
+                            data-image="./image/SlimePE1-1.jpg">
+                            <img src="./image/SlimePE1-1.jpg" class="card-img-top">
+                            <div class="card-body">
+                                <h5 class="card-title">經典-利姆路</h5>
+                                <p class="card-text">價格：<i>$&nbsp;150</i></p>
+                            </div>
+                            <div class="card-footer">
+                                <button class="btn btn-outline-primary add-to-cart">加入購物車</button>
+                                <img class="FHimg add-to-favorite" src="./image/Fheart.svg" data-id="1" 
+                                    onclick="toggleFavorite(this, '1')">
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col">
+                        <div class="card h-100 proImg" data-id="2" data-name="靜面具-利姆路" data-price="200"
+                            data-image="./image/SlimePE1-2.jpg">
+                            <img src="./image/SlimePE1-2.jpg" class="card-img-top">
+                            <div class="card-body">
+                                <h5 class="card-title">靜面具-利姆路</h5>
+                                <p class="card-text">價格：<i>$&nbsp;200</i></p>
+                            </div>
+                            <div class="card-footer">
+                                <button class="btn btn-outline-primary add-to-cart">加入購物車</button>
+                                <img class="FHimg add-to-favorite" src="./image/Fheart.svg" data-id="2"
+                                    onclick="toggleFavorite(this, '2')">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="card h-100 proImg" data-id="3" data-name="暴風龍-利姆路" data-price="250"
+                            data-image="./image/SlimePE1-3.jpg">
+                            <img src="./image/SlimePE1-3.jpg" class="card-img-top">
+                            <div class="card-body">
+                                <h5 class="card-title">暴風龍-利姆路</h5>
+                                <p class="card-text">價格：<i>$&nbsp;250</i></p>
+                            </div>
+                            <div class="card-footer">
+                                <button class="btn btn-outline-primary add-to-cart">加入購物車</button>
+                                <img class="FHimg add-to-favorite" src="./image/Fheart.svg" data-id="3"
+                                    onclick="toggleFavorite(this, '3')">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="card h-100 proImg" data-id="4" data-name="國王-利姆路" data-price="250"
+                            data-image="./image/SlimePE1-4.jpg">
+                            <img src="./image/SlimePE1-4.jpg" class="card-img-top">
+                            <div class="card-body">
+                                <h5 class="card-title">國王-利姆路</h5>
+                                <p class="card-text">價格：<i>$&nbsp;250</i></p>
+                            </div>
+                            <div class="card-footer">
+                                <button class="btn btn-outline-primary add-to-cart">加入購物車</button>
+                                <img class="FHimg add-to-favorite" src="./image/Fheart.svg" data-id="4"
+                                    onclick="toggleFavorite(this, '4')">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="card h-100 proImg" data-id="5" data-name="老師-利姆路" data-price="180"
+                            data-image="./image/SlimePE1-5.jpg">
+                            <img src="./image/SlimePE1-5.jpg" class="card-img-top">
+                            <div class="card-body">
+                                <h5 class="card-title">老師-利姆路</h5>
+                                <p class="card-text">價格：<i>$&nbsp;180</i></p>
+                            </div>
+                            <div class="card-footer">
+                                <button class="btn btn-outline-primary add-to-cart">加入購物車</button>
+                                <img class="FHimg add-to-favorite" src="./image/Fheart.svg" data-id="5"
+                                    onclick="toggleFavorite(this, '5')">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="container">
+                <h3><b>第二彈</b></h3>
+                <img src="./image/SlimePE2w-0.jpg" class="proimg">
+                <div class="row row-cols-2 row-cols-md-3 row-cols-xl-5 g-4">
+
+                    <div class="col">
+                        <div class="card h-100 proImg" data-id="6" data-name="蒼影-利姆路" data-price="150" data-image="./image/SlimePE2-1.jpg">
+                            <img src="./image/SlimePE2-1.jpg" class="card-img-top">
+                            <div class="card-body">
+                                <h5 class="card-title">蒼影-利姆路</h5>
+                                <p class="card-text">價格：<i>$&nbsp;150</i></p>
+                            </div>
+                            <div class="card-footer">
+                                <button class="btn btn-outline-primary add-to-cart">加入購物車</button>
+                                <img class="FHimg add-to-favorite" src="./image/Fheart.svg" data-id="6"
+                                    onclick="toggleFavorite(this, '6')">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="card h-100 proImg" data-id="7" data-name="紫苑-史萊姆" data-price="120" data-image="./image/SlimePE2-2.jpg">
+                            <img src="./image/SlimePE2-2.jpg" class="card-img-top">
+                            <div class="card-body">
+                                <h5 class="card-title">紫苑-史萊姆</h5>
+                                <p class="card-text">價格：<i>$&nbsp;120</i></p>
+                            </div>
+                            <div class="card-footer">
+                                <button class="btn btn-outline-primary add-to-cart">加入購物車</button>
+                                <img class="FHimg add-to-favorite" src="./image/Fheart.svg" data-id="7"
+                                    onclick="toggleFavorite(this, '7')">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="card h-100 proImg" data-id="8" data-name="音符-史萊姆" data-price="100" data-image="./image/SlimePE2-3.jpg">
+                            <img src="./image/SlimePE2-3.jpg" class="card-img-top">
+                            <div class="card-body">
+                                <h5 class="card-title">音符-史萊姆</h5>
+                                <p class="card-text">價格：<i>$&nbsp;100</i></p>
+                            </div>
+                            <div class="card-footer">
+                                <button class="btn btn-outline-primary add-to-cart">加入購物車</button>
+                                <img class="FHimg add-to-favorite" src="./image/Fheart.svg" data-id="8"
+                                    onclick="toggleFavorite(this, '8')">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="card h-100 proImg" data-id="9" data-name="朱菜-史萊姆" data-price="140" data-image="./image/SlimePE2-4.jpg">
+                            <img src="./image/SlimePE2-4.jpg" class="card-img-top">
+                            <div class="card-body">
+                                <h5 class="card-title">朱菜-史萊姆</h5>
+                                <p class="card-text">價格：<i>$&nbsp;140</i></p>
+                            </div>
+                            <div class="card-footer">
+                                <button class="btn btn-outline-primary add-to-cart">加入購物車</button>
+                                <img class="FHimg add-to-favorite" src="./image/Fheart.svg" data-id="9"
+                                    onclick="toggleFavorite(this, '9')">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="card h-100 proImg" data-id="10" data-name="紅丸-史萊姆" data-price="160" data-image="./image/SlimePE2-5.jpg">
+                            <img src="./image/SlimePE2-5.jpg" class="card-img-top">
+                            <div class="card-body">
+                                <h5 class="card-title">紅丸-史萊姆</h5>
+                                <p class="card-text">價格：<i>$&nbsp;160</i></p>
+                            </div>
+                            <div class="card-footer">
+                                <button class="btn btn-outline-primary add-to-cart">加入購物車</button>
+                                <img class="FHimg add-to-favorite" src="./image/Fheart.svg" data-id="10"
+                                    onclick="toggleFavorite(this, '10')">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="container">
+                <h3><b>第三彈</b></h3>
+                <img src="./image/SlimePE3w-0.jpg" class="proimg">
+                <div class="row row-cols-2 row-cols-md-3 row-cols-xl-5 g-4">
+
+                    <div class="col">
+                        <div class="card h-100 proImg" data-id="11" data-name="蜜利姆-史萊姆" data-price="150" data-image="./image/SlimePE3-1.jpg">
+                            <img src="./image/SlimePE3-1.jpg" class="card-img-top">
+                            <div class="card-body">
+                                <h5 class="card-title">蜜利姆-史萊姆</h5>
+                                <p class="card-text">價格：<i>$&nbsp;150</i></p>
+                            </div>
+                            <div class="card-footer">
+                                <button class="btn btn-outline-primary add-to-cart">加入購物車</button>
+                                <img class="FHimg add-to-favorite" src="./image/Fheart.svg" data-id="11"
+                                    onclick="toggleFavorite(this, '11')">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="card h-100 proImg" data-id="12" data-name="靜-史萊姆" data-price="200" data-image="./image/SlimePE3-2.jpg">
+                            <img src="./image/SlimePE3-2.jpg" class="card-img-top">
+                            <div class="card-body">
+                                <h5 class="card-title">靜-史萊姆</h5>
+                                <p class="card-text">價格：<i>$&nbsp;200</i></p>
+                            </div>
+                            <div class="card-footer">
+                                <button class="btn btn-outline-primary add-to-cart">加入購物車</button>
+                                <img class="FHimg add-to-favorite" src="./image/Fheart.svg" data-id="12"
+                                    onclick="toggleFavorite(this, '12')">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="card h-100 proImg" data-id="13" data-name="校長-史萊姆" data-price="100" data-image="./image/SlimePE3-3.jpg">
+                            <img src="./image/SlimePE3-3.jpg" class="card-img-top">
+                            <div class="card-body">
+                                <h5 class="card-title">校長-史萊姆</h5>
+                                <p class="card-text">價格：<i>$&nbsp;100</i></p>
+                            </div>
+                            <div class="card-footer">
+                                <button class="btn btn-outline-primary add-to-cart">加入購物車</button>
+                                <img class="FHimg add-to-favorite" src="./image/Fheart.svg" data-id="13"
+                                    onclick="toggleFavorite(this, '13')">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="card h-100 proImg" data-id="14" data-name="蘭加-史萊姆" data-price="210" data-image="./image/SlimePE3-4.jpg">
+                            <img src="./image/SlimePE3-4.jpg" class="card-img-top">
+                            <div class="card-body">
+                                <h5 class="card-title">蘭加-史萊姆</h5>
+                                <p class="card-text">價格：<i>$&nbsp;210</i></p>
+                            </div>
+                            <div class="card-footer">
+                                <button class="btn btn-outline-primary add-to-cart">加入購物車</button>
+                                <img class="FHimg add-to-favorite" src="./image/Fheart.svg" data-id="14"
+                                    onclick="toggleFavorite(this, '14')">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="card h-100 proImg" data-id="15" data-name="哥布達-史萊姆" data-price="120" data-image="./image/SlimePE3-5.jpg">
+                            <img src="./image/SlimePE3-5.jpg" class="card-img-top">
+                            <div class="card-body">
+                                <h5 class="card-title">哥布達-史萊姆</h5>
+                                <p class="card-text">價格：<i>$&nbsp;120</i></p>
+                            </div>
+                            <div class="card-footer">
+                                <button class="btn btn-outline-primary add-to-cart">加入購物車</button>
+                                <img class="FHimg add-to-favorite" src="./image/Fheart.svg" data-id="15"
+                                    onclick="toggleFavorite(this, '15')">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="container">
+                <h3><b>第四彈</b></h3>
+                <img src="./image/SlimePE4w-0.jpg" class="proimg">
+                <div class="row row-cols-2 row-cols-md-3 row-cols-xl-5 g-4">
+
+                    <div class="col">
+                        <div class="card h-100 proImg" data-id="16" data-name="蒼華-史萊姆" data-price="150" data-image="./image/SlimePE4-1.jpg">
+                            <img src="./image/SlimePE4-1.jpg" class="card-img-top">
+                            <div class="card-body">
+                                <h5 class="card-title">蒼華-史萊姆</h5>
+                                <p class="card-text">價格：<i>$&nbsp;150</i></p>
+                            </div>
+                            <div class="card-footer">
+                                <button class="btn btn-outline-primary add-to-cart">加入購物車</button>
+                                <img class="FHimg add-to-favorite" src="./image/Fheart.svg" data-id="16"
+                                    onclick="toggleFavorite(this, '16')">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="card h-100 proImg" data-id="17" data-name="戈畢爾-史萊姆" data-price="150" data-image="./image/SlimePE4-2.jpg">
+                            <img src="./image/SlimePE4-2.jpg" class="card-img-top">
+                            <div class="card-body">
+                                <h5 class="card-title">戈畢爾-史萊姆</h5>
+                                <p class="card-text">價格：<i>$&nbsp;150</i></p>
+                            </div>
+                            <div class="card-footer">
+                                <button class="btn btn-outline-primary add-to-cart">加入購物車</button>
+                                <img class="FHimg add-to-favorite" src="./image/Fheart.svg" data-id="17"
+                                    onclick="toggleFavorite(this, '17')">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="card h-100 proImg" data-id="18" data-name="GiveMeFire-史萊姆" data-price="120"
+                            data-image="./image/SlimePE4-3.jpg">
+                            <img src="./image/SlimePE4-3.jpg" class="card-img-top">
+                            <div class="card-body">
+                                <h5 class="card-title">GiveMeFire-史萊姆</h5>
+                                <p class="card-text">價格：<i>$&nbsp;120</i></p>
+                            </div>
+                            <div class="card-footer">
+                                <button class="btn btn-outline-primary add-to-cart">加入購物車</button>
+                                <img class="FHimg add-to-favorite" src="./image/Fheart.svg" data-id="18"
+                                    onclick="toggleFavorite(this, '18')">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="card h-100 proImg" data-id="19" data-name="烏蒂瑪-史萊姆" data-price="120" data-image="./image/SlimePE4-4.jpg">
+                            <img src="./image/SlimePE4-4.jpg" class="card-img-top">
+                            <div class="card-body">
+                                <h5 class="card-title">烏蒂瑪-史萊姆</h5>
+                                <p class="card-text">價格：<i>$&nbsp;120</i></p>
+                            </div>
+                            <div class="card-footer">
+                                <button class="btn btn-outline-primary add-to-cart">加入購物車</button>
+                                <img class="FHimg add-to-favorite" src="./image/Fheart.svg" data-id="19"
+                                    onclick="toggleFavorite(this, '19')">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="card h-100 proImg" data-id="20" data-name="迪亞布羅-史萊姆" data-price="150" data-image="./image/SlimePE4-5.jpg">
+                            <img src="./image/SlimePE4-5.jpg" class="card-img-top">
+                            <div class="card-body">
+                                <h5 class="card-title">迪亞布羅-史萊姆</h5>
+                                <p class="card-text">價格：<i>$&nbsp;150</i></p>
+                            </div>
+                            <div class="card-footer">
+                                <button class="btn btn-outline-primary add-to-cart">加入購物車</button>
+                                <img class="FHimg add-to-favorite" src="./image/Fheart.svg" data-id="20"
+                                    onclick="toggleFavorite(this, '20')">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <a href="https://news.gamme.com.tw/1768846">扭蛋</a>
+</body>
+
+</html>

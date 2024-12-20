@@ -1,0 +1,78 @@
+function updateFavorite() {
+  const favorite = getFavorites();
+  const favoriteItemsContainer = document.getElementById('cart-items');
+  favoriteItemsContainer.innerHTML = '';
+
+  if (favorites.length === 0) {
+    favoriteItemsContainer.innerHTML = `
+    <p class="text-center">
+      尚未收藏任何商品
+      </p>
+    `;
+    return;
+  }
+
+  favorite.forEach(productId => {
+    const col = document.createElement('div');
+    const product = cart.find(item => item.id === productId);
+    col.innerHTML = `
+          <div class="card h-100">
+            <img src="${product.image}" class="card-img-top" alt="${product.name}">
+            <div class="card-body">
+              <h5 class="card-title">${product.name}</h5>
+              <p class="card-text">價格：$${product.price}</p>
+              <button class="btn btn-outline-primary add-to-cart">加入購物車</button>
+            </div>
+          </div>
+        `;
+      favoriteItemsContainer.appendChild(col);
+  })
+}
+
+// 更新我的最愛
+document.addEventListener('DOMContentLoaded', () => {
+  const favorite = getFavorites();
+
+  document.querySelectorAll('.add-to-favorite').forEach(img => {
+    img.addEventListener('click', () => {
+      const productElement = img.closest('.card');
+      const products = {
+        id: productElement.getAnimations('data-id'),
+        name: productElement.getAnimations('data-name'),
+        price: parseInt(productElement.getAnimations('data-price')),
+        image: productElement.getAnimations('data-image'),
+      };
+      addToFavorite(products);
+    });
+  });
+
+  // 模擬商品數據（可從後端獲取或統一管理）
+  // const products = [
+  //   { id: '1', name: '經典-利姆路', price: 150, image: './image/SlimePE1-1.jpg' },
+  //   { id: '2', name: '靜面具-利姆路', price: 200, image: './image/SlimePE1-2.jpg' },
+  //   { id: '3', name: '暴風龍-利姆路', price: 250, image: './image/SlimePE1-3.jpg' },
+  //   { id: '4', name: '國王-利姆路', price: 250, image: './image/SlimePE1-4.jpg' },
+  //   { id: '5', name: '老師-利姆路', price: 180, image: './image/SlimePE1-5.jpg' },
+  // ];
+
+  // 遍歷我的最愛商品 ID
+  // favorite.forEach(productId => {
+  //   const product = products.find(p => p.id === productId);
+  //   if (product) {
+  //     // 動態插入商品
+  //     const col = document.createElement('div');
+  //     col.className = 'col-md-4 mb-4';
+  //     col.innerHTML = `
+  //         <div class="card h-100">
+  //           <img src="${product.image}" class="card-img-top" alt="${product.name}">
+  //           <div class="card-body">
+  //             <h5 class="card-title">${product.name}</h5>
+  //             <p class="card-text">價格：$${product.price}</p>
+  //             <button class="btn btn-outline-primary add-to-cart">加入購物車</button>
+  //           </div>
+  //         </div>
+  //       `;
+  //     favoriteItemsContainer.appendChild(col);
+  //   }
+  // });
+});

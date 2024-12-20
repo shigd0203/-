@@ -1,0 +1,253 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+/* body {
+    background-image: url('./image/背景圖.webp');
+    background-repeat: repeat-y;
+    background-size: 100%;
+} */
+
+#newS {
+    color: #bc2e1e;
+    background: #edde9c;
+    text-shadow: 0 1px 0px #378ab4, 1px 0 0px #5dabcd, 1px 2px 1px #378ab4, 2px 1px 1px #5dabcd, 2px 3px 2px #378ab4, 3px 2px 2px #5dabcd, 3px 4px 2px #378ab4, 4px 3px 3px #5dabcd, 4px 5px 3px #378ab4, 5px 4px 2px #5dabcd, 5px 6px 2px #378ab4, 6px 5px 2px #5dabcd, 6px 7px 1px #378ab4, 7px 6px 1px #5dabcd, 7px 8px 0px #378ab4, 8px 7px 0px #5dabcd;
+}
+
+#News {
+    color: #FFFFFF;
+    background: #0e8dbc;
+    text-shadow: none;
+}
+
+/* 導覽列的設定 */
+.myNav {
+    background: linear-gradient(to right, #a3d9ff, #FFF);
+}
+
+.myNav li {
+    padding: 10px 20px;
+}
+
+.myNav li:hover {
+    background-color: #ffc300;
+    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.2);
+}
+
+.myNav li a {
+    font-size: 18px;
+    color: #1c3a56;
+    text-decoration: none;
+    padding: 5px 10px;
+}
+
+.loginbtn {
+    margin-top: 5px;
+    margin-right: 20px;
+}
+
+/* 導覽列置中對齊 */
+#nav-menu {
+    width: 100%;
+    display: block;
+    text-align: center;
+    /* border: 3px solid black; */
+}
+
+#nav-menu li {
+    display: inline-block;
+}
+
+/* 登入表單CSS */
+/* username and password的設定 */
+input[type=text],
+input[type=password],
+input[type=email],
+input[type=tel] {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+}
+
+/* 按鈕的設定 */
+.myBtn {
+    background-color: #51c4e7;
+    color: white;
+    padding: 10px 20px;
+    font-size: 16px;
+    font-weight: bold;
+    border: none;
+    cursor: pointer;
+    margin: 8px 0;
+    width: 100%;
+}
+
+.myBtn:hover {
+    background-color: #ffc300;
+    color: #1c3a56;
+    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.2);
+}
+
+/* Cancel按鈕的設定 */
+.cancelbtn {
+    width: auto;
+    padding: 10px 20px;
+    background-color: #f44336;
+    color: #f1f1f1;
+    border: none;
+    cursor: pointer;
+    margin: 8px 0;
+}
+
+.cancelbtn:hover {
+    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.2);
+    color: #1c3a56;
+}
+
+/* Center the image and position the close button */
+/* 大頭照位置設定 */
+.imgcontainer {
+    left: 10px;
+    text-align: center;
+    margin: 24px 0 12px 0;
+    position: relative;
+}
+
+/* 大頭照大小跟原角設定 */
+img.avatar {
+    width: 40%;
+    border-radius: 50%;
+}
+
+/* 表單內容設定 */
+.container {
+    padding: 5px;
+    margin-bottom: 1rem;
+
+}
+
+/* forget Password的位置設定 */
+span.psw {
+    float: right;
+    padding-top: 16px;
+}
+
+
+/* 表單整個的設定 */
+.modal {
+    display: none;
+    /* Hidden by default */
+    position: fixed;
+    /* Stay in place */
+    z-index: 3;
+    /* Sit on top */
+    left: 0;
+    top: 0;
+    width: 100%;
+    /* Full width */
+    height: 100%;
+    /* Full height */
+    overflow: auto;
+    /* Enable scroll if needed */
+    background-color: rgb(0, 0, 0);
+    /* Fallback color */
+    background-color: rgba(0, 0, 0, 0.4);
+    /* Black w/ opacity */
+    padding-top: 60px;
+}
+
+/* Modal Content/Box */
+.modal-content {
+    background-color: #fefefe;
+    margin: 1% auto 15% auto;
+    /* 5% from the top, 15% from the bottom and centered */
+    border: 1px solid #888;
+    width: 50%;
+    /* Could be more or less, depending on screen size */
+}
+
+/* The Close Button (x) */
+.close {
+    position: absolute;
+    right: 25px;
+    top: 0;
+    color: #000;
+    font-size: 35px;
+    font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+    color: red;
+    cursor: pointer;
+}
+
+/* cancel與forgetpassword的容器排版 */
+#cancelpsw {
+    background-color: #f1f1f1;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* 商品圖片大小 */
+.proimg {
+    width: 100%;
+    padding-bottom: 1rem;
+}
+
+/* 商品樣式 */
+
+
+.card-text i {
+    color: red;
+    font-size: 1.25rem;
+}
+
+/* 加入我的最愛 */
+.FHimg {
+    width: 30px;
+    float: right;
+    margin-top: 3px;
+    margin-right: -5px;
+}
+
+.FHimg:hover {
+    background-image: url(./image/Fheart-fill.svg);
+    background-repeat: no-repeat;
+    background-size: 30px;
+}
+
+/* 商品圖片設定 */
+.proImg {
+    width: 100%;
+}
+
+
+/* Change styles for span and cancel button on extra small screens */
+@media screen and (max-width: 300px) {
+    span.psw {
+        display: block;
+        float: none;
+    }
+
+    .cancelbtn {
+        width: 100%;
+    }
+}
+
+@media screen and (max-width: 992px) {
+    .modal-content {
+        width: 70%;
+    }
+
+    #nav-menu li {
+        display: block;
+    }
+
+
+}
