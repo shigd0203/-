@@ -6,7 +6,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>個人商店</title>
     <script src="./_js/bootstrap.bundle.js"></script>
-    <script src="./_js/javascript.js"></script>
     <link rel="stylesheet" href="./_css/bootstrap.css">
     <link rel="stylesheet" href="./styles.css">
 </head>
@@ -422,9 +421,30 @@
                 </div>
             </div>
         </div>
-    </main>
 
-    <a href="https://news.gamme.com.tw/1768846">扭蛋</a>
+        <div class="toast-container position-fixed bottom-0 end-0 p-3">
+            <div class="toast bg-warning" id="toastCart">
+                <div class="toast-header">
+                    提示！
+                    <button class="btn-close ms-auto"></button>
+                </div>
+                <div class="toast-body" id="toastCart-b">
+                    
+                </div>
+            </div>
+        
+            <div class="toast bg-warning" id="toastFavorite">
+                <div class="toast-header">
+                    提示！
+                    <button class="btn-close ms-auto"></button>
+                </div>
+                <div class="toast-body" id="toastFavorite-b">
+                    
+                </div>
+            </div>
+        </div>
+    </main>
+    <script src="./_js/javascript.js"></script>
 </body>
 
 </html>

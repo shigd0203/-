@@ -148,6 +148,10 @@ function toggleFavorite(FHimg, productId) {
     favorites.push(productId);
     FHimg.src = './image/Fheart-fill.svg'; // 切換為實心圖
     alert('商品已加入我的最愛');
+    // 使用Toast提示
+    document.getElementById('toastFavorite-b').innerHTML = `${productId.name} 已加入購物車`;
+    const toast = new bootstrap.Toast(document.getElementById('toastFavorite'));
+    toast.show();
   } else {
     // 商品在我的最愛中 -> 移除
     favorites.splice(index, 1);
@@ -178,13 +182,13 @@ function toggleFavorite(FHimg, productId) {
 
 // 更新我的最愛
 document.addEventListener('DOMContentLoaded', () => {
-  const favorites = getFavorites();  
+  const favorites = getFavorites();
   const favoriteItemsContainer = document.getElementById('favorite-items');
   const FIC = document.getElementById('favorite-item')
 
   // 初始化商品頁面的愛心狀態
   document.querySelectorAll('.add-to-favorite').forEach(img => {
-    const productId = img.getAttribute('data-id');        
+    const productId = img.getAttribute('data-id');
 
     if (favorites.includes(productId)) {
       img.src = './image/Fheart-fill.svg';
@@ -192,7 +196,7 @@ document.addEventListener('DOMContentLoaded', () => {
       img.src = './image/Fheart.svg';
     }
   });
-  
+
   favoriteItemsContainer.addEventListener('click', Event => {
     if (Event.target.classList.contains('remove-favorite')) {
       const productId = Event.target.getAttribute('data-id');
@@ -215,7 +219,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
   });
-  
+
   if (favorites.length === 0) {
     FIC.innerHTML = `
     <p class="text-center">
@@ -279,7 +283,13 @@ function addToCart(product) {
   }
 
   saveCart(cart);
-  alert(`${product.name} 已加入購物車`);
+  // alert(`${product.name} 已加入購物車`);
+
+  // 使用Toast提示
+  document.getElementById('toastCart-b').innerHTML = `${product.name} 已加入購物車`;
+  const toast = new bootstrap.Toast(document.getElementById('toastCart'));
+  toast.show();
+
 }
 
 // 清空購物車
@@ -396,3 +406,4 @@ function updateCart() {
 
   totalElement.textContent = `總計：$${total}`;
 }
+
